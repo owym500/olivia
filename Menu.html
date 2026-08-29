@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+	font-size: 15px; 
+    color: white;
+    background-color: black;
+}
+
+/* Style the header */
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 400px;
+}
+.header img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+    margin-top: 50px;
+}
+
+.navbar {
+	overflow: hidden;
+    background-color: #333;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+	float: left; /* Make sure that the links stay side-by-side */
+	display: block; /* Change the display to block, for responsive reasons (see below) */
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none; /* Remove underline */
+}
+
+/* Change color on hover/mouse-over */
+.navbar a:hover {
+	color: black;
+    background-color: #ddd;
+}
+
+#dropdown-menu {
+       		color: white;
+            font-family: sans-serif;
+            font-size: 18px;
+			height: 180px;
+            width: inherit;
+			display: none;
+            margin-top: 50px;
+            list-style-type: none;
+            text-transform: capitalize; 
+       }
+       
+/*Column container */
+.main {
+	display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex: 100%; /* Set the width of the column */
+    padding: 20px;
+}
+    
+    h1 {
+        text-align: center;
+        display: block;
+    }
+
+ul {
+	font-size: 16px;	
+    line-height: 35px;
+    font-weight: 600;
+}
+
+.left {
+	float: left;
+    width: 300px;
+    height: auto;
+    padding-right: 25px;
+}
+
+.right {
+	float: left;
+    width: 300px;
+    height: auto;
+}
+
+.center {
+	/*margin-right: 25px;*/
+    text-align: center;
+}
+
+.left-align {
+	text-align: left;
+}
+
+.right-align {
+    display: inline;
+    float: right; 
+}
+
+.food {
+	width: 500px;
+    height: 400px;
+    object-fit: contain;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+	
+/* Responsive layout - when the screen is less than 700px wide, make the columns stack on top of each other (rather than next to each other) */
+
+@media screen and (max-width: 700px) {
+	.row {
+    	flex-direction: column;
+    }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation bar links stack on top each other */
+@media screen and (max-width: 400px) {
+	.navbar a {
+    	float: none;
+        width: 100%;
+    }
+}
+
+/* Footer */
+.footer {
+    		padding: 20px; /* Some padding */
+    		text-align: center; /* Center text*/
+    		background: black; /* black background */
+		}
+       
+       /* Style all font awesome icons */
+		.fa {
+    		padding: 20px;
+            margin: 20px;
+    		font-size: 30px;
+    		width: 70px;
+    		text-align: center;
+    		text-decoration: none;
+            border-radius: 50%;
+		}
+
+		/* Add a hover effect if you want */
+		.fa:hover {
+    		opacity: 0.7;
+		}
+
+		/* Set a specific color for each brand */
+
+		/* Facebook */
+		.fa-facebook {
+    		background: #3B5998;
+    		color: white;
+		}
+
+		/* Twitter */
+		.fa-twitter {
+    		background: #55ACEE;
+    		color: white;
+		}
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMcVF8eELnSOBQYlDH9FgQPsUTvSeqt2Hq2yJQizLAhuMHglEp" alt="Oishi-Q logo">
+</div>
+
+<div class="navbar">
+	<a href="default.htm">Home</a>
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#" onclick="myFunction()">Opening Hours <span class="caret"></span></a>
+        <ul id="dropdown-menu">
+          <li>Monday: 10am - 11pm</li>
+          <li>Tuesday: 10am - 11pm</li>
+          <li>Wednesday: 10am - 11pm</li>
+          <li>Thursday: 10am - 11pm</li>
+          <li>Friday: 10am - 11pm</li>
+          <li>Saturday: 10am - 11pm</li>
+          <li>Sunday: 10am - 11pm</li>
+        </ul>
+    <a href="#">Menu</a>
+    <a href="#">Location</a>
+    <a href="#">Contact Us</a>
+</div>
+
+<div class="main">
+	<div class="Small-plates">
+  	   <h1>Small plates</h1>	
+        <div class="center">
+      		<ul>
+          		<li class="left-align">Chicken Karaage (Crispy bite-sized Japanese marinated chicken thighs)
+              		<span class="right-align">£4.50</span>
+          		</li>
+          		<li class="left-align">Oishi Wings (Crunchy fried chicken wings)
+              		<span class="right-align">£4.50</span>
+          		</li>
+                <img src="wings.jpg" alt="Oishi Wings" class="food">
+                <li class="left-align">Spicy Tofu Karaage (V) (Spiced silken tofu)
+                	<span class="right-align">£4.50</span>
+                </li>
+                <li class="left-align">Agedashi Tofu (Silken tofu served with a fish broth garnished with Bonito flakes)
+                	<span class="right-align">£4.85</span>
+                </li>
+                <li class="left-align">Spicy Squid Karaage (Japanese calamari cooked in a spicy seasoning)
+                	<span class="right-align">£4.85</span>
+                </li>
+                <img src="squid.jpg" alt="Spicy Squid Karaage" class="food spicy-karaage">
+      		</ul>
+  		</div>
+</div>
+
+    <div class="Yakitori-skewers">
+    	<h1>Grilled Yakitori Skewers</h1>
+        <h3>Delicious Japanese skewers (2 in a portion) - add steamed rice when you order any 3 skewers for £1.00</h3>
+        <div class="center">
+      		<ul>
+          		<li class="left-align">Chicken Skin
+              		<span class="right-align">£3.80</span>
+          		</li>
+                <li class="left-align">Chicken Thigh
+                	<span class="right-align">£3.80</span>
+                </li>
+          		<li class="left-align">Belly Pork
+              		<span class="right-align">£3.80</span>
+          		</li>
+                <li class="left-align">Sweetcorn
+                	<span class="right-align">£3.80</span>
+                </li>
+      		</ul>
+            <img src="skewers.jpg" alt="Chicken thigh yakitori skewers" class="food">
+  		</div>
+
+  		<div class="center">
+      		<ul>
+          		<li class="left-align">Chicken Wings
+              		<span class="right-align">£3.80</span>
+          		</li>
+          		<li class="left-align">Salmon Belly
+              		<span class="right-align">£3.80</span>
+          		</li>
+                <li class="left-align">Broccoli
+                	<span class="right-align">£3.00</span>
+                </li>
+      		</ul>
+  		</div>
+    </div>
+    
+    
+    <div class="Donburi">
+    	<h1>Donburi (all served with Japanese rice)</h1>
+        <div class="center">
+      		<ul>
+          		<li class="left-align">Curry (Traditional homemade Japanese - choose from: Chicken Karaage, Chicken Katsu or Pork Katsu)
+              		<span class="right-align"> £8.95</span>
+          		</li>
+                <img src="donburi.jpg" alt="Chicken karaage curry" class="food">
+          		<li class="left-align">Spiced Tofu with Japanese curry (V)
+              		<span class="right-align">£8.50</span>
+          		</li>
+                <li class="left-align"> Vegetable Tempura with curry (V) (Tempura vegetables served with vegetable curry)
+                	<span class="right-align">£8.50</span>
+                </li>
+                <li class="left-align">Grilled Yakitori Vegetable skewers (V) (Vegetable yakitori skewers served with rice)
+              		<span class="right-align">£10.00</span>
+          		</li>
+                <li class="left-align">Katsudon: Japanese egg omelette cooked with onions (Choose from: Chicken Karaage, Chicken Katsu or Pork Katsu)
+                	<span class="right-align">£8.95</span>
+                </li>
+                <li class="left-align">Garlic & Butter Chicken (Garlic & butter glazed grilled chicken with onions & shiitake mushrooms)
+                	<span class="right-align">£8.95</span>
+                </li>
+                <img src="chicken.jpg" alt="Garlic & Butter Chicken" class="food">
+                <li class="left-align">Katsu: Tangy Tonkatsu sauce & Japanese mayonnaise (Choose from: Chicken Karaage, Chicken Katsu or Pork)
+                	<span class="right-align">£8.95</span>
+                </li>
+                <li class="left-align">Spicy sauce: Japanese mayonnaise & spicy sauce (Choose from: Chicken Karaage, Chicken Katsu or Pork Katsu)
+                	<span class="right-align">£8.95</span>
+                </li>
+                <li class="left-align">Chicken Teriyaki (Oven Baked chicken served with a boiled egg and asparagus)
+                	<span class="right-align">£9.50</span>
+                </li>
+                <li class="left-align">Salmon Teriyaki (Pan-fried salmon served with a boiled egg and asparagus)
+                	<span class="right-align">£11.00</span>
+                </li>
+                <img src="salmon.jpg" alt="Salmon Teriyaki with boiled egg and asparagus" class="food">
+                <li class="left-align">Salmon Curry (Pan-fried salmon with authentic Japanese curry sauce)
+                	<span class="right-align">£11.00</span>
+                </li>
+                <li class="left-align">Unagi Don (Japanese grilled Eel served with a boiled egg and asparagus)
+                	<span class="right-align">£12.00</span>
+                </li>
+      		</ul>
+  		</div>
+    </div>
+    
+    <div class="Noodles-in-miso">
+    	<h1>Noodles in Miso Soup</h1>
+        <div class="center">
+      		<ul>
+          		<li class="left-align">Vegetable Tempura (V)
+                	<span class="right-align">£9.50</span>
+                </li>
+                <li class="left-align">Chicken
+              		<span class="right-align">£10.00</span>
+          		</li>
+                <li class="left-align">Salmon
+              		<span class="right-align"> £11.00</span>
+          		</li>
+            <img src="miso.jpg" alt="Salmon Miso" class="food">
+            </ul>
+        </div>
+    </div>
+    
+    <div class="Extras">
+    	<h1>Extras</h1>
+        <div class="center">
+      		<ul>
+          		<li class="left-align">Miso Soup
+              		<span class="right-align"> £2.60</span>
+          		</li>
+          		<li class="left-align">Rice
+              		<span class="right-align">£2.50</span>
+          		</li>
+                <li class="left-align">Curry Sauce
+                	<span class="right-align">£2.50</span>
+                </li>
+                <li class="left-align">Teriyaki Sauce
+                	<span class="right-align">£2.50</span>
+                </li>
+      		</ul>
+  		</div>
+
+  		<div class="center">
+      		<ul>
+          		<li class="left-align">Fried Egg
+              		<span class="right-align">£1.30</span>
+          		</li>
+          		<li class="left-align">Boiled Egg
+              		<span class="right-align">£1.30</span>
+          		</li>
+                <li class="left-align">Extra Sauce (Mayo / Tonkatsu / Yakitori / Sriracha)
+                	<span class="right-align">£1.00</span>
+                </li>
+      		</ul>
+  		</div>
+    </div>
+    
+</div>
+<hr>
+
+<div class="footer">
+    <a href="www.facebook.com" class="fa fa-facebook"></a>
+	<a href="www.twitter.com" class="fa fa-twitter"></a>
+</div>
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script>
+	function myFunction() {
+    var x = document.getElementById("dropdown-menu");
+    	if (x.style.display === "none") {
+        	x.style.display = "block";
+    	} else {
+        	x.style.display = "none";
+    	}
+}
+  </script>
+
+</body>
+</html>
